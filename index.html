@@ -7,628 +7,762 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
-            color: #333333;
         }
         .page-container {
-            max-width: 210mm;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .break-before-page {
-            page-break-before: always;
-        }
-        @media print {
-            body, .page-container {
-                background-color: white;
-                box-shadow: none;
-            }
-            .no-print {
-                display: none;
-            }
+            page-break-after: always;
         }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "chart.js": "https://esm.sh/chart.js@4.4.3",
+    "chart.js/auto": "https://esm.sh/chart.js@4.4.3/auto"
+  }
+}
+</script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-[#f5f5f5] text-[#333333]">
-    <div id="root">
-        <div class="page-container">
-            <!-- Cover Component HTML -->
-            <div class="cover bg-white text-[#333333] min-h-screen flex flex-col justify-between text-center relative p-8 md:p-4">
-              <div class="absolute top-5 right-5 w-[150px]">
-                <img src="https://page1.genspark.site/v1/base64_upload/f7ead9fbc5d3b5c8e6ca5edf05233900" alt="Afiliada a la Cámara Inmobiliaria" class="w-full" />
+    <div class="page-container max-w-[210mm] mx-auto bg-white shadow-lg">
+      <!-- Cover Component -->
+      <div class="cover bg-white text-[#333333] min-h-screen flex flex-col justify-between text-center relative p-8 md:p-4">
+        <div class="absolute top-5 right-5 w-[150px]">
+          <img src="https://page1.genspark.site/v1/base64_upload/f7ead9fbc5d3b5c8e6ca5edf05233900" alt="Afiliada a la Cámara Inmobiliaria" class="w-full" />
+        </div>
+  
+        <div class="container mx-auto">
+          <div class="flex justify-center mx-auto mb-10 max-w-[400px]">
+            <img src="https://page1.genspark.site/v1/base64_upload/bdf03e4d148c01dccd0a86bdad9ae477" alt="Ledezma Asesores Logo" class="w-full" />
+          </div>
+  
+          <div class="flex justify-center space-x-12 mb-12">
+            <div class="text-center">
+              <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
+                <i class="fas fa-map-marker-alt text-white text-xl"></i>
               </div>
-
-              <div class="container mx-auto">
-                <div class="flex justify-center mx-auto mb-10 max-w-[400px]">
-                  <img src="https://page1.genspark.site/v1/base64_upload/bdf03e4d148c01dccd0a86bdad9ae477" alt="Ledezma Asesores Logo" class="w-full" />
-                </div>
-
-                <div class="flex justify-center space-x-12 mb-12">
-                  <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
-                      <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                    </div>
-                  </div>
-                  <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
-                      <i class="fas fa-home text-white text-xl"></i>
-                    </div>
-                  </div>
-                  <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
-                      <i class="fas fa-chart-line text-white text-xl"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <h1 class="text-3xl md:text-4xl text-center text-[#1a4e7e] font-semibold border-b-3 border-[#d4af37] pb-2.5 mb-7">VALORACIÓN PROFESIONAL DE CASA</h1>
-
-                <div class="flex justify-center">
-                  <div class="bg-[#f0f7ff] py-2.5 px-5 rounded-md border-l-4 border-[#1a4e7e] inline-block mb-10">
-                    <i class="fas fa-map-marker-alt mr-2 text-[#1a4e7e]"></i>
-                    <span>Ubicación del Inmueble: Av. 17 de Diciembre, a 115 metros de Helados Tropic, Ciudad Bolívar, Estado Bolívar - Venezuela</span>
-                  </div>
-                </div>
-
-                <div class="bg-[#f9f9f9] p-5 rounded-lg mt-10">
-                  <h3 class="text-xl font-semibold mb-4 text-center">Información de Contacto</h3>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center mb-3">
-                      <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-map-marker-alt"></i></span>
-                      <span>Calle Vidal, Centro Comercial El Progreso, Piso 1, Local No. 2, Ciudad Bolívar, Estado Bolívar</span>
-                    </div>
-                    <div class="flex items-center mb-3">
-                      <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-phone"></i></span>
-                      <span>Teléfono CANTV: 0285-6541410</span>
-                    </div>
-                    <div class="flex items-center mb-3">
-                      <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fab fa-whatsapp"></i></span>
-                      <span>Teléfono Oficina / Whatsapp: 0424-9188861</span>
-                    </div>
-                    <div class="flex items-center mb-3">
-                      <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-envelope"></i></span>
-                      <span>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7c0c2d5c2c9c4cecae7cbc2c3c2ddcac6c6d4c2d4c8d5c2d489c4c8ca">[email&#160;protected]</a></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mt-12 flex justify-between items-center">
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
+                <i class="fas fa-home text-white text-xl"></i>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="w-12 h-12 rounded-full bg-[#1a4e7e] flex items-center justify-center mx-auto">
+                <i class="fas fa-chart-line text-white text-xl"></i>
+              </div>
+            </div>
+          </div>
+  
+          <h1 class="text-3xl md:text-4xl text-center text-[#1a4e7e] font-semibold border-b-3 border-[#d4af37] pb-2.5 mb-7">VALORACIÓN PROFESIONAL DE CASA</h1>
+  
+          <div class="flex justify-center">
+            <div class="bg-[#f0f7ff] py-2.5 px-5 rounded-md border-l-4 border-[#1a4e7e] inline-block mb-10">
+              <i class="fas fa-map-marker-alt mr-2 text-[#1a4e7e]"></i>
+              <span>Ubicación del Inmueble: Av. 17 de Diciembre, a 115 metros de Helados Tropic, Ciudad Bolívar, Estado Bolívar - Venezuela</span>
+            </div>
+          </div>
+  
+          <div class="bg-[#f9f9f9] p-5 rounded-lg mt-10">
+            <h3 class="text-xl font-semibold mb-4 text-center">Información de Contacto</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="flex items-center mb-3">
+                <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-map-marker-alt"></i></span>
+                <span>Calle Vidal, Centro Comercial El Progreso, Piso 1, Local No. 2, Ciudad Bolívar, Estado Bolívar</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-phone"></i></span>
+                <span>Teléfono CANTV: 0285-6541410</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fab fa-whatsapp"></i></span>
+                <span>Teléfono Oficina / Whatsapp: 0424-9188861</span>
+              </div>
+              <div class="flex items-center mb-3">
+                <span class="text-[#1a4e7e] w-6 text-center mr-2.5"><i class="fas fa-envelope"></i></span>
+                <span>Email: <a href="mailto:ledezmaasesores@gmail.com" class="text-blue-600 hover:underline">ledezmaasesores@gmail.com</a></span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="mt-12 flex justify-between items-center">
+            <div>
+              <h4 class="font-medium text-gray-700">Análisis de Valoración Inmobiliaria</h4>
+              <p class="text-sm text-gray-500">Informe preparado por Périto Avaluador Profesional</p>
+            </div>
+            <div class="flex items-center bg-blue-100 py-1 px-4 rounded-full">
+              <i class="fas fa-user-tie text-blue-700 mr-2"></i>
+              <span class="text-blue-700 font-medium">Asesoría Inmobiliaria Profesional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ValuationReport Component Content -->
+      <div class="page-container">
+        <!-- Introduction -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">INFORME DE VALORACIÓN DE INMUEBLE</h2>
+          <div class="mb-8">
+              <p class="mb-4">El presente documento tiene como finalidad determinar el valor técnico y comercial de una casa ubicada en la Avenida 17 de Diciembre, a 115 metros de Helados Tropic, Ciudad Bolívar, Estado Bolívar. La valoración se ha realizado siguiendo métodos técnicos reconocidos para el cálculo del valor del terreno y la edificación.</p>
+              <p>Este informe se estructura en tres partes principales:</p>
+              <ul class="list-disc pl-6 mb-4">
+                  <li>Valoración técnica del terreno</li>
+                  <li>Valoración técnica de la construcción</li>
+                  <li>Análisis del mercado actual y recomendación de precio de venta</li>
+              </ul>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-8">
+              <h3 class="text-xl font-semibold mb-2">Características de la propiedad</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h4 class="font-medium text-gray-700">Análisis de Valoración Inmobiliaria</h4>
-                    <p class="text-sm text-gray-500">Informe preparado por Périto Avaluador Profesional</p>
+                      <p><strong>Tipo de inmueble:</strong> Casa y Terreno</p>
+                      <p><strong>Superficie de terreno:</strong> 1.344,00 m²</p>
+                      <p><strong>Superficie de construcción:</strong> 300,82 m²</p>
                   </div>
-                  <div class="flex items-center bg-blue-100 py-1 px-4 rounded-full">
-                    <i class="fas fa-user-tie text-blue-700 mr-2"></i>
-                    <span class="text-blue-700 font-medium">Asesoría Inmobiliaria Profesional</span>
+                  <div>
+                      <p><strong>Estructura:</strong> Concreto armado</p>
+                      <p><strong>Techo:</strong> Platabanda</p>
+                      <p><strong>Paredes:</strong> Bloques de cemento</p>
                   </div>
-                </div>
               </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <!-- Land Value Calculation -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CÁLCULO DEL VALOR DEL TERRENO</h2>
+          <div class="mb-6">
+              <p class="mb-4">Para la valoración del terreno se ha utilizado el método comparativo con propiedades similares en la zona, aplicando los ajustes necesarios, que se enumeran a continuación:</p>
+              <div class="ml-4">
+                  <p class="mb-2"><strong>1.- Ajuste Por Superficie De Terreno</strong> (Fuente: Método Empírico - Manual Asaprove Pág. 18)</p>
+                  <p class="mb-4"><strong>2.- Ajuste Por Factor De Negociación</strong> (Fuente: Libro Valoración Inmobiliaria Editorial Politécnica De Valencia Pág. 77)</p>
+              </div>
+          </div>
+          <div class="mb-8">
+              <table class="w-full table-fixed text-[0.85rem] bg-white border">
+                  <thead class="bg-gray-100">
+                      <tr>
+                          <th class="border py-1 px-1 text-[0.65rem] whitespace-nowrap w-[8%]">COMPA<br/>RABLES</th>
+                          <th class="border py-1 px-1 text-xs w-[14%]">SUPERFICIE DE TERRENO</th>
+                          <th class="border py-1 px-1 text-xs w-[14%]">PRECIO DE VENTA</th>
+                          <th class="border py-1 px-1 text-xs w-[10%]">Bs./M²</th>
+                          <th class="border py-1 px-1 text-xs w-[40%]">DIRECCIÓN</th>
+                          <th class="border py-1 px-1 text-xs w-[14%]">FECHA DE VENTA</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1opKlugjRMKf8ulDG7kz-Zg-kxVJrj0Ow/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">1</a></td>
+                          <td class="border text-center py-1 px-1">900,00</td>
+                          <td class="border text-center py-1 px-1">1.461.150,00</td>
+                          <td class="border text-center py-1 px-1">1.623,50</td>
+                          <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA CONCRETADA INMOBILIARIA LEDEZMA ASESORES: AVENIDA REPÚBLICA, FRENTE A MRW, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
+                          <td class="border text-center py-1 px-1">01/05/2022</td>
+                      </tr>
+                      <tr>
+                          <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1VUmQKBM9y_Rutg33Qw4eYTt3BZaTw7o0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">2</a></td>
+                          <td class="border text-center py-1 px-1">1.484,40</td>
+                          <td class="border text-center py-1 px-1">10.715.100,00</td>
+                          <td class="border text-center py-1 px-1">7.218,47</td>
+                          <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA INMOBILIARIA LEDEZMA ASESORES: AVENIDA 17 DE DICIEMBRE, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
+                          <td class="border text-center py-1 px-1">29/12/2024</td>
+                      </tr>
+                      <tr>
+                          <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1PnTydYYwl0gCLOd6CtqVAmeTwiwtLkU_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">3</a></td>
+                          <td class="border text-center py-1 px-1">1.643,00</td>
+                          <td class="border text-center py-1 px-1">11.689.200,00</td>
+                          <td class="border text-center py-1 px-1">7.114,55</td>
+                          <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA INMOBILIARIA LEDEZMA ASESORES: AVENIDA 17 DE DICIEMBRE, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
+                          <td class="border text-center py-1 px-1">21/10/2020</td>
+                      </tr>
+                      <tr>
+                          <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1UyzNLVprOFtTn6YRASyAfHn32-HJ_gxA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">4</a></td>
+                          <td class="border text-center py-1 px-1">1.200,00</td>
+                          <td class="border text-center py-1 px-1">5.114.025,00</td>
+                          <td class="border text-center py-1 px-1">4.261,69</td>
+                          <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA CONCRETADA INMOBILIARIA INVERSIONES GARYCAL: AVENIDA PASEO MENESES, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
+                          <td class="border text-center py-1 px-1">01/06/2022</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <p class="mt-2 italic text-[#666666] text-center">Si deseas ver el comparable, dale clic al mismo.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                  <h3 class="text-xl font-semibold mb-4">Estadísticos</h3>
+                  <table class="min-w-full bg-white">
+                      <tbody>
+                          <tr><td class="py-2 px-4 border">N° MUESTRAS</td><td class="py-2 px-4 border text-center">4</td></tr>
+                          <tr><td class="py-2 px-4 border">PROMEDIO</td><td class="py-2 px-4 border text-center">5.368,85</td></tr>
+                          <tr><td class="py-2 px-4 border">DESVIACIÓN ESTÁNDAR</td><td class="py-2 px-4 border text-center">2.680,57</td></tr>
+                          <tr><td class="py-2 px-4 border">VALOR MÁXIMO</td><td class="py-2 px-4 border text-center">7.599,35</td></tr>
+                          <tr><td class="py-2 px-4 border">VALOR MÍNIMO</td><td class="py-2 px-4 border text-center">1.842,22</td></tr>
+                          <tr><td class="py-2 px-4 border">LÍMITE SUPERIOR</td><td class="py-2 px-4 border text-center">8.049,42</td></tr>
+                          <tr><td class="py-2 px-4 border">LÍMITE INFERIOR</td><td class="py-2 px-4 border text-center">2.688,27</td></tr>
+                          <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE CORRELACIÓN</td><td class="py-2 px-4 border text-center font-semibold">0,97</td></tr>
+                          <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE CONCENTRACIÓN</td><td class="py-2 px-4 border text-center font-semibold">0,93</td></tr>
+                          <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE PEARSON</td><td class="py-2 px-4 border text-center font-semibold">0,97</td></tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div>
+                  <h3 class="text-xl font-semibold mb-4">Resultados del análisis</h3>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                      <p class="mb-2"><strong>SUPERFICIE DEL TERRENO EN ESTUDIO:</strong> 1.344,00 m²</p>
+                      <p class="mb-2"><strong>VALOR UNITARIO ACTUAL DEL TERRENO:</strong> 5.368,85 Bs./m²</p>
+                      <p class="mb-2"><strong>VALOR TOTAL DEL TERRENO:</strong> 7.215.728,67 Bs.</p>
+                      <p class="mb-2"><strong>VALOR TOTAL REDONDEADO:</strong> 7.215.730,00 Bs.</p>
+                      <p class="mb-4"><strong>VALOR TOTAL EN USD:</strong> 61.773,22 $ <span class="text-sm">(1 USD = 116,81 Bs.)</span></p>
+                      <p class="text-sm">Según tasa de cambio de referencia tomada de la Página del Banco Central de Venezuela con fecha valor Miércoles 16 de Julio del año 2.025</p>
+                  </div>
+              </div>
+          </div>
+           <div class="bg-green-50 p-6 rounded-lg mb-8 border border-green-200">
+              <h3 class="text-xl font-semibold mb-4">Importancia de los Coeficientes Estadísticos en la Valoración</h3>
+              <div class="flex flex-col md:flex-row mb-6">
+                  <div class="w-full md:w-1/2 md:pr-4">
+                      <p class="mb-4">Los coeficientes estadísticos son una parte fundamental en la validación técnica de una valoración inmobiliaria, pues respaldan la confiabilidad matemática y estadística de los resultados obtenidos:</p>
+                      <ul class="list-disc pl-6 mb-4">
+                          <li class="mb-2"><span class="font-semibold">Coeficiente de Correlación (0,97):</span> Este valor muy alto indica una correlación positiva casi perfecta entre las variables analizadas. Significa que existe una relación directa y muy proporcional entre los factores considerados para la valoración, otorgando máxima confiabilidad estadística a nuestros cálculos.</li>
+                          <li class="mb-2"><span class="font-semibold">Coeficiente de Concentración (0,93):</span> Con un valor muy alto, muestra una excelente concentración de los datos alrededor de la media, lo que significa que los valores obtenidos de los inmuebles comparables son muy consistentes y homogéneos, reduciendo significativamente la incertidumbre en la valoración.</li>
+                          <li class="mb-2"><span class="font-semibold">Coeficiente de Pearson (0,97):</span> Confirma una correlación lineal casi perfecta y positiva entre las variables analizadas (como precio vs. superficie). Esto valida de manera excepcional la metodología empleada y refuerza la alta fiabilidad del modelo de valoración utilizado.</li>
+                      </ul>
+                  </div>
+                  <div class="w-full md:w-1/2 md:pl-4">
+                      <canvas id="coefficientsChart" width="400" height="250"></canvas>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-green-200">
+                  <p class="font-semibold text-green-700">Impacto en la Valoración:</p>
+                  <p>Estos coeficientes confieren una solidez estadística excepcional a la valoración, respaldando con datos matemáticos de alta precisión el valor técnico calculado (61.773,22 USD). Los tres coeficientes muestran valores muy cercanos a la perfección estadística, validando de manera robusta la metodología empleada y confiriendo máxima confiabilidad al resultado obtenido para la determinación del valor del terreno.</p>
+              </div>
+          </div>
+          <div class="mb-8 h-[200px] md:h-[300px] flex justify-center">
+              <canvas id="landValueChart" class="max-w-full"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <!-- Construction Value Calculation -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CÁLCULO DEL VALOR DE LA CONSTRUCCIÓN</h2>
+          <div class="mb-6">
+              <p>Para la valoración de la construcción se ha utilizado el método de Ross-Heidecke, que considera el estado de conservación del inmueble calculando la depreciación más acorde a la realidad.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                  <h3 class="text-xl font-semibold mb-4">Parámetros de construcción</h3>
+                  <table class="min-w-full bg-white">
+                      <tbody>
+                          <tr><td class="py-2 px-4 border">Área de Construcción</td><td class="py-2 px-4 border text-center">300,82 m²</td></tr>
+                          <tr><td class="py-2 px-4 border">VR (Valor m² de Construcción)</td><td class="py-2 px-4 border text-center">70.086,00 Bs.</td></tr>
+                          <tr><td class="py-2 px-4 border">e (Estado)</td><td class="py-2 px-4 border text-center">3,50</td></tr>
+                          <tr><td class="py-2 px-4 border">C (Coeficiente)</td><td class="py-2 px-4 border text-center">32,20%</td></tr>
+                          <tr><td class="py-2 px-4 border">Ee (Edad Efectiva)</td><td class="py-2 px-4 border text-center">66 años</td></tr>
+                          <tr><td class="py-2 px-4 border">Vu (Vida útil)</td><td class="py-2 px-4 border text-center">80 años</td></tr>
+                          <tr><td class="py-2 px-4 border">Vr (Valor de Reposición)</td><td class="py-2 px-4 border text-center">10%</td></tr>
+                      </tbody>
+                  </table>
+                  <div class="bg-[#f8f9fa] border border-[#dee2e6] rounded-md p-3 my-4 border-l-4 border-[#6c757d]">
+                      <div class="flex items-start gap-2.5">
+                          <div class="text-[#6c757d] text-[1.1rem] mt-0.5 shrink-0"><i class="fas fa-info-circle"></i></div>
+                          <div class="text-[0.875rem] leading-[1.4] text-[#495057]">
+                              <strong class="text-[#343a40]">VR:</strong> Guías de PROMERCA (antes CINPRONET), acorde a la tipología del Inmueble en Estudio. <strong>10.- UNIFAMILIAR CONSTRUCCION TRADICIONAL, REPORTE Julio 2019.</strong> Adaptada y Actualizada al 16/07/2025
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <h3 class="text-xl font-semibold mb-4">Resultados del Ross-Heidecke</h3>
+                  <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                      <p class="mb-2"><strong>VR - a = Valor de Reposición Depreciado:</strong> 17.579,94 Bs.</p>
+                      <p class="mb-2"><strong>VRt = Valor Estimado de la Construcción:</strong> 5.288.397,12 Bs.</p>
+                      <p class="mb-2"><strong>VALOR ACTUAL (CASA):</strong> 5.288.397,12 Bs.</p>
+                      <p class="mb-2"><strong>VALOR ACTUAL REDONDEADO (CASA):</strong> 5.288.400,00 Bs.</p>
+                      <p class="mb-4"><strong>VALOR ACTUAL EN USD:</strong> 45.273,52 $ <span class="text-sm">(1 USD = 116,81 Bs.)</span></p>
+                      <p class="text-sm">Según tasa de cambio de referencia (Bs./$ 116,81), tomada de la Página del Banco Central de Venezuela, con fecha valor, Miércoles 16 de Julio del año 2025</p>
+                  </div>
+                  <div class="bg-gray-100 p-4 rounded-lg">
+                      <h4 class="font-semibold mb-2">Clasificación del estado</h4>
+                      <p>La construcción se encuentra en estado <strong>3,50</strong>: Mantenimiento Deficiente.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="mb-8">
+              <h3 class="text-xl font-semibold mb-4">Tabla de depreciación por estado</h3>
+              <div class="overflow-x-auto">
+                  <table class="min-w-full bg-white">
+                      <thead class="bg-gray-100">
+                          <tr>
+                              <th class="py-2 px-4 border">ESTADO</th>
+                              <th class="py-2 px-4 border">CONDICIÓN FÍSICA</th>
+                              <th class="py-2 px-4 border">CLASIFICACIÓN NORMAL</th>
+                              <th class="py-2 px-4 border">COEFICIENTE</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr><td class="py-2 px-4 border text-center">1</td><td class="py-2 px-4 border">NUEVO: No ha sufrido ni necesita reparaciones</td><td class="py-2 px-4 border text-center">Óptimo: O</td><td class="py-2 px-4 border text-center">0</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">1.5</td><td class="py-2 px-4 border">Excelente mantenimiento, casa recién construida</td><td class="py-2 px-4 border text-center">Muy bueno: MB</td><td class="py-2 px-4 border text-center">0.032</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">2</td><td class="py-2 px-4 border">REGULAR: Requiere o ha recibido reparaciones sin importancia</td><td class="py-2 px-4 border text-center">Bueno: B</td><td class="py-2 px-4 border text-center">2.52</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">2.5</td><td class="py-2 px-4 border">Mantenimiento no muy bueno</td><td class="py-2 px-4 border text-center">Intermedio: I</td><td class="py-2 px-4 border text-center">8.09</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">3</td><td class="py-2 px-4 border">Requiere reparaciones simples</td><td class="py-2 px-4 border text-center">Regular: R</td><td class="py-2 px-4 border text-center">18.10</td></tr>
+                          <tr class="bg-[#fef3c7] font-bold border-2 border-[#f59e0b]"><td class="py-2 px-4 border text-center">3.5</td><td class="py-2 px-4 border">Mantenimiento deficiente</td><td class="py-2 px-4 border text-center">Deficiente: D</td><td class="py-2 px-4 border text-center">32.20</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">4</td><td class="py-2 px-4 border">Requiere reparaciones importantes</td><td class="py-2 px-4 border text-center">Malo: M</td><td class="py-2 px-4 border text-center">52.60</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">5</td><td class="py-2 px-4 border">Requiere muchas reparaciones importantes</td><td class="py-2 px-4 border text-center">Muy Malo: MM</td><td class="py-2 px-4 border text-center">72.20</td></tr>
+                          <tr><td class="py-2 px-4 border text-center">-</td><td class="py-2 px-4 border">Sin valor= Valor de Demolición</td><td class="py-2 px-4 border text-center">Demolición: DM</td><td class="py-2 px-4 border text-center">100</td></tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <div class="mb-8 h-[200px] md:h-[300px] flex justify-center">
+              <canvas id="constructionDepreciationChart" class="max-w-full max-h-[250px]"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <!-- Total Property Value -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">VALOR TOTAL DEL INMUEBLE</h2>
+          <div class="flex flex-col md:flex-row gap-4 mb-4">
+              <div class="flex-1 mb-4">
+                  <h3 class="text-lg font-semibold mb-3">Resumen de valoración</h3>
+                  <table class="min-w-full bg-white text-[0.85rem]">
+                      <thead class="bg-gray-100">
+                          <tr>
+                              <th class="py-2 px-3 border text-sm">COMPONENTE</th>
+                              <th class="py-2 px-3 border text-sm">VALOR EN Bs.</th>
+                              <th class="py-2 px-3 border text-sm">VALOR EN USD</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="py-2 px-3 border">Terreno</td>
+                              <td class="py-2 px-3 border text-center">7.215.730,00 Bs.</td>
+                              <td class="py-2 px-3 border text-center">61.773,22 $</td>
+                          </tr>
+                          <tr>
+                              <td class="py-2 px-3 border">Construcción</td>
+                              <td class="py-2 px-3 border text-center">5.288.400,00 Bs.</td>
+                              <td class="py-2 px-3 border text-center">45.273,52 $</td>
+                          </tr>
+                          <tr class="bg-blue-100 font-bold">
+                              <td class="py-2 px-3 border">VALOR TOTAL</td>
+                              <td class="py-2 px-3 border text-center">12.504.130,00 Bs.</td>
+                              <td class="py-2 px-3 border text-center">107.046,74 $</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div class="flex-1 flex justify-center items-center h-[250px] mt-2">
+                  <canvas id="propertyValueDistributionChart" class="max-w-[300px] max-h-[250px]"></canvas>
+              </div>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg mb-8">
+              <h3 class="text-xl font-semibold mb-4">Valor técnico del inmueble</h3>
+              <p class="text-2xl font-bold text-center mb-2">107.046,74 USD</p>
+              <p class="text-center text-sm">CIENTO SIETE MIL CUARENTA Y SEIS DÓLARES AMERICANOS CON 74/100 CTVS.</p>
+              <p class="text-center text-sm mt-2">Según tasa de cambio de referencia (116,81 Bs./$) del Banco Central de Venezuela, con fecha valor, Miércoles 16 de Julio del año 2.025</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <!-- Market Analysis -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">ANÁLISIS DE MERCADO INMOBILIARIO EN VENEZUELA (JULIO 2025)</h2>
+          
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef7e0] border-[#f59e0b]">
+              <h3 class="text-xl font-semibold mb-4 flex items-center text-yellow-600"><i class="fas fa-chart-line mr-2"></i> 1. Contexto Macroeconómico y Poder Adquisitivo</h3>
+              <div class="mb-4">
+                  <h4 class="font-semibold mb-2">Contracción Económica Persistente</h4>
+                  <p class="mb-3">Según el Instituto de Investigaciones Económicas y Sociales de la UCAB (IIES/UCAB), al cierre de 2024, la economía venezolana representaba solo el <strong>37,6% de su tamaño hace diez años</strong>. El PIB per cápita se ha reducido en un <strong>67%</strong>, evidenciando una contracción estructural profunda que afecta directamente la capacidad de compra de bienes inmuebles.</p>
+                  <h4 class="font-semibold mb-2">Baja Capacidad de Compra</h4>
+                  <p class="mb-3">El Observatorio Venezolano de Finanzas (OVF) reporta que la remuneración promedio mensual del sector privado en Caracas alcanzó los <strong>250 dólares</strong> a finales del primer trimestre de 2025. La distribución salarial muestra:</p>
+                  <ul class="list-disc pl-6 mb-3"><li>Puestos gerenciales: 500 dólares</li><li>Profesionales: 350 dólares</li><li>Obreros: 220 dólares</li></ul>
+                  <p class="mb-3">Sin embargo, la canasta básica familiar se ubicó en <strong>600 dólares</strong> en marzo de 2025, equivalente a 170 salarios mínimos, haciendo inalcanzable la adquisición de viviendas con costos promedio entre 25.000 y 35.000 dólares.</p>
+                  <h4 class="font-semibold mb-2">Desigualdad Marcada</h4>
+                  <p>La Encuesta Nacional de Condiciones de Vida (ENCOVI) 2024 revela una desigualdad extrema: la diferencia entre el grupo más pobre y el más rico es de <strong>70 veces</strong> (8,5 dólares vs. 600 dólares). El 40% de los hogares com mayores ingresos se concentra en Caracas, que solo alberga el 16% de la población nacional.</p>
+              </div>
+          </div>
+
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#ecfdf5] border-[#10b981]">
+            <h3 class="text-xl font-semibold mb-4 flex items-center text-green-600"><i class="fas fa-home mr-2"></i> 2. Dinámica del Mercado Inmobiliario</h3>
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">Estabilización Relativa</h4>
+                <p class="mb-3">Según Klara Velutini, directora de Century21, el sector inmobiliario ha mantenido <strong>cierta estabilidad</strong>, especialmente en Caracas, donde se observan nuevos desarrollos y proyectos residenciales de gran escala. Los precios se han sostenido y hay nuevos proyectos inmobiliarios impresionantes disponibles tanto en la capital como en otras ciudades.</p>
+                <h4 class="font-semibold mb-2">Transacciones Dolarizadas</h4>
+                <p class="mb-3">La dolarización de facto ha sido un factor clave en el comportamiento del mercado. Las transacciones se realizan mayoritariamente en dólares estadounidenses, proporcionando estabilidad de precios pero limitando el acceso a la población con ingresos en bolívares. Esta dinámica ha creado un mercado dual con características particulares de oferta y demanda.</p>
+                <h4 class="font-semibold mb-2">Nicho Turístico en Crecimiento</h4>
+                <p>El auge del turismo ha fortalecido segmentos específicos del mercado. El interés de nómadas digitales y trabajadores remotos ha impulsado la demanda en destinos como Morrocoy, Margarita y Tucacas. Esta tendencia representa un nuevo motor de inversión, especialmente en propiedades para alquiler temporal.</p>
             </div>
-
-            <!-- ValuationReport Component HTML -->
-            <div class="p-8 mb-4 rounded-lg bg-white">
-                <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">INFORME DE VALORACIÓN DE INMUEBLE</h2>
-                <div class="mb-8">
-                    <p class="mb-4">El presente documento tiene como finalidad determinar el valor técnico y comercial de una casa ubicada en la Avenida 17 de Diciembre, a 115 metros de Helados Tropic, Ciudad Bolívar, Estado Bolívar. La valoración se ha realizado siguiendo métodos técnicos reconocidos para el cálculo del valor del terreno y la edificación.</p>
-                    <p>Este informe se estructura en tres partes principales:</p>
-                    <ul class="list-disc pl-6 mb-4">
-                        <li>Valoración técnica del terreno</li>
-                        <li>Valoración técnica de la construcción</li>
-                        <li>Análisis del mercado actual y recomendación de precio de venta</li>
-                    </ul>
-                </div>
-                <div class="bg-blue-50 p-4 rounded-lg mb-8">
-                    <h3 class="text-xl font-semibold mb-2">Características de la propiedad</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <p><strong>Tipo de inmueble:</strong> Casa y Terreno</p>
-                            <p><strong>Superficie de terreno:</strong> 1.344,00 m²</p>
-                            <p><strong>Superficie de construcción:</strong> 300,82 m²</p>
-                        </div>
-                        <div>
-                            <p><strong>Estructura:</strong> Concreto armado</p>
-                            <p><strong>Techo:</strong> Platabanda</p>
-                            <p><strong>Paredes:</strong> Bloques de cemento</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef2f2] border-[#ef4444]">
+            <h3 class="text-xl font-semibold mb-4 flex items-center text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i> 3. Factores Clave de Volatilidad</h3>
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">Tipo de Cambio Múltiple</h4>
+                <p class="mb-3">La coexistencia de tasas de cambio oficial y paralelo genera distorsiones significativas en la formación de precios. Las fluctuaciones diarias, semanales e incluso horarias impactan directamente la oferta y demanda, alterando constantemente las condiciones de negociación. Esta volatilidad cambiaria crea inestabilidad en la fijación de precios y encarece los costos de construcción.</p>
+                <h4 class="font-semibold mb-2">Ausencia de Crédito Hipotecario</h4>
+                <p class="mb-3">La falta de sistemas de financiamiento tradicional limita severamente el acceso a la vivienda. Sin opciones de crédito hipotecario funcionales, las transacciones dependen completamente del capital disponible de los compradores, reduciendo significativamente el universo de potenciales adquirentes.</p>
+                <h4 class="font-semibold mb-2">Riesgos Regulatorios</h4>
+                <p>La Ley para la Regulación y Control de Arrendamientos de Vivienda (2011) impide la formalización de contratos en dólares, generando incertidumbre, falta de transparencia e informalidad en el mercado de alquileres. Esta regulación restrictiva afecta tanto a propietarios como a inquilinos.</p>
             </div>
+          </div>
 
-            <div class="p-8 mb-4 rounded-lg bg-white">
-                <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CÁLCULO DEL VALOR DEL TERRENO</h2>
-                <div class="mb-6">
-                    <p class="mb-4">Para la valoración del terreno se ha utilizado el método comparativo con propiedades similares en la zona, aplicando los ajustes necesarios, que se enumeran a continuación:</p>
-                    <div class="ml-4">
-                        <p class="mb-2"><strong>1.- Ajuste Por Superficie De Terreno</strong> (Fuente: Método Empírico - Manual Asaprove Pág. 18)</p>
-                        <p class="mb-4"><strong>2.- Ajuste Por Factor De Negociación</strong> (Fuente: Libro Valoración Inmobiliaria Editorial Politécnica De Valencia Pág. 77)</p>
-                    </div>
-                </div>
-                <div class="mb-8">
-                    <table class="w-full table-fixed text-[0.85rem] bg-white border">
-                        <thead class="bg-gray-100">
-                            <tr>
-                                <th class="border py-1 px-1 text-[0.65rem] whitespace-nowrap w-[8%]">COMPA<br/>RABLES</th>
-                                <th class="border py-1 px-1 text-xs w-[14%]">SUPERFICIE DE TERRENO</th>
-                                <th class="border py-1 px-1 text-xs w-[14%]">PRECIO DE VENTA</th>
-                                <th class="border py-1 px-1 text-xs w-[10%]">Bs./M²</th>
-                                <th class="border py-1 px-1 text-xs w-[40%]">DIRECCIÓN</th>
-                                <th class="border py-1 px-1 text-xs w-[14%]">FECHA DE VENTA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1opKlugjRMKf8ulDG7kz-Zg-kxVJrj0Ow/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">1</a></td>
-                                <td class="border text-center py-1 px-1">900,00</td>
-                                <td class="border text-center py-1 px-1">1.461.150,00</td>
-                                <td class="border text-center py-1 px-1">1.623,50</td>
-                                <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA CONCRETADA INMOBILIARIA LEDEZMA ASESORES: AVENIDA REPÚBLICA, FRENTE A MRW, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
-                                <td class="border text-center py-1 px-1">01/05/2022</td>
-                            </tr>
-                            <tr>
-                                <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1VUmQKBM9y_Rutg33Qw4eYTt3BZaTw7o0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">2</a></td>
-                                <td class="border text-center py-1 px-1">1.484,40</td>
-                                <td class="border text-center py-1 px-1">10.715.100,00</td>
-                                <td class="border text-center py-1 px-1">7.218,47</td>
-                                <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA INMOBILIARIA LEDEZMA ASESORES: AVENIDA 17 DE DICIEMBRE, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
-                                <td class="border text-center py-1 px-1">29/12/2024</td>
-                            </tr>
-                            <tr>
-                                <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1PnTydYYwl0gCLOd6CtqVAmeTwiwtLkU_/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">3</a></td>
-                                <td class="border text-center py-1 px-1">1.643,00</td>
-                                <td class="border text-center py-1 px-1">11.689.200,00</td>
-                                <td class="border text-center py-1 px-1">7.114,55</td>
-                                <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA INMOBILIARIA LEDEZMA ASESORES: AVENIDA 17 DE DICIEMBRE, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
-                                <td class="border text-center py-1 px-1">21/10/2020</td>
-                            </tr>
-                            <tr>
-                                <td class="border text-center py-1 px-1"><a href="https://drive.google.com/file/d/1UyzNLVprOFtTn6YRASyAfHn32-HJ_gxA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline font-bold cursor-pointer">4</a></td>
-                                <td class="border text-center py-1 px-1">1.200,00</td>
-                                <td class="border text-center py-1 px-1">5.114.025,00</td>
-                                <td class="border text-center py-1 px-1">4.261,69</td>
-                                <td class="border py-1 px-2 text-[0.75rem] leading-[1.3]">OFERTA DE VENTA CONCRETADA INMOBILIARIA INVERSIONES GARYCAL: AVENIDA PASEO MENESES, CIUDAD BOLÍVAR, ESTADO BOLÍVAR - VENEZUELA</td>
-                                <td class="border text-center py-1 px-1">01/06/2022</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="mt-2 italic text-[#666666] text-center">Si deseas ver el comparable, dale clic al mismo.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Estadísticos</h3>
-                        <table class="min-w-full bg-white">
-                            <tbody>
-                                <tr><td class="py-2 px-4 border">N° MUESTRAS</td><td class="py-2 px-4 border text-center">4</td></tr>
-                                <tr><td class="py-2 px-4 border">PROMEDIO</td><td class="py-2 px-4 border text-center">5.368,85</td></tr>
-                                <tr><td class="py-2 px-4 border">DESVIACIÓN ESTÁNDAR</td><td class="py-2 px-4 border text-center">2.680,57</td></tr>
-                                <tr><td class="py-2 px-4 border">VALOR MÁXIMO</td><td class="py-2 px-4 border text-center">7.599,35</td></tr>
-                                <tr><td class="py-2 px-4 border">VALOR MÍNIMO</td><td class="py-2 px-4 border text-center">1.842,22</td></tr>
-                                <tr><td class="py-2 px-4 border">LÍMITE SUPERIOR</td><td class="py-2 px-4 border text-center">8.049,42</td></tr>
-                                <tr><td class="py-2 px-4 border">LÍMITE INFERIOR</td><td class="py-2 px-4 border text-center">2.688,27</td></tr>
-                                <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE CORRELACIÓN</td><td class="py-2 px-4 border text-center font-semibold">0,97</td></tr>
-                                <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE CONCENTRACIÓN</td><td class="py-2 px-4 border text-center font-semibold">0,93</td></tr>
-                                <tr class="bg-green-50"><td class="py-2 px-4 border">COEFICIENTE DE PEARSON</td><td class="py-2 px-4 border text-center font-semibold">0,97</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Resultados del análisis</h3>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <p class="mb-2"><strong>SUPERFICIE DEL TERRENO EN ESTUDIO:</strong> 1.344,00 m²</p>
-                            <p class="mb-2"><strong>VALOR UNITARIO ACTUAL DEL TERRENO:</strong> 5.368,85 Bs./m²</p>
-                            <p class="mb-2"><strong>VALOR TOTAL DEL TERRENO:</strong> 7.215.728,67 Bs.</p>
-                            <p class="mb-2"><strong>VALOR TOTAL REDONDEADO:</strong> 7.215.730,00 Bs.</p>
-                            <p class="mb-4"><strong>VALOR TOTAL EN USD:</strong> 61.773,22 $ <span class="text-sm">(1 USD = 116,81 Bs.)</span></p>
-                            <p class="text-sm">Según tasa de cambio de referencia tomada de la Página del Banco Central de Venezuela con fecha valor Miércoles 16 de Julio del año 2.025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-green-50 p-6 rounded-lg mb-8 border border-green-200">
-                    <h3 class="text-xl font-semibold mb-4">Importancia de los Coeficientes Estadísticos en la Valoración</h3>
-                    <div class="flex flex-col md:flex-row mb-6">
-                        <div class="w-full md:w-1/2 md:pr-4">
-                            <p class="mb-4">Los coeficientes estadísticos son una parte fundamental en la validación técnica de una valoración inmobiliaria, pues respaldan la confiabilidad matemática y estadística de los resultados obtenidos:</p>
-                            <ul class="list-disc pl-6 mb-4">
-                                <li class="mb-2"><span class="font-semibold">Coeficiente de Correlación (0,97):</span> Este valor muy alto indica una correlación positiva casi perfecta entre las variables analizadas. Significa que existe una relación directa y muy proporcional entre los factores considerados para la valoración, otorgando máxima confiabilidad estadística a nuestros cálculos.</li>
-                                <li class="mb-2"><span class="font-semibold">Coeficiente de Concentración (0,93):</span> Con un valor muy alto, muestra una excelente concentración de los datos alrededor de la media, lo que significa que los valores obtenidos de los inmuebles comparables son muy consistentes y homogéneos, reduciendo significativamente la incertidumbre en la valoración.</li>
-                                <li class="mb-2"><span class="font-semibold">Coeficiente de Pearson (0,97):</span> Confirma una correlación lineal casi perfecta y positiva entre las variables analizadas (como precio vs. superficie). Esto valida de manera excepcional la metodología empleada y refuerza la alta fiabilidad del modelo de valoración utilizado.</li>
-                            </ul>
-                        </div>
-                        <div class="w-full md:w-1/2 md:pl-4">
-                            <canvas id="coefficientsChart" width="400" height="250"></canvas>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg border border-green-200">
-                        <p class="font-semibold text-green-700">Impacto en la Valoración:</p>
-                        <p>Estos coeficientes confieren una solidez estadística excepcional a la valoración, respaldando con datos matemáticos de alta precisión el valor técnico calculado (61.773,22 USD). Los tres coeficientes muestran valores muy cercanos a la perfección estadística, validando de manera robusta la metodología empleada y confiriendo máxima confiabilidad al resultado obtenido para la determinación del valor del terreno.</p>
-                    </div>
-                </div>
-                <div class="mb-8 h-[200px] md:h-[300px] flex justify-center">
-                    <canvas id="landValueChart" class="max-w-full"></canvas>
-                </div>
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#eff6ff] border-[#3b82f6]">
+            <h3 class="text-xl font-semibold mb-4 flex items-center text-blue-600"><i class="fas fa-map-marked-alt mr-2"></i> 4. Tendencias Regionales y Oportunidades</h3>
+            <div class="mb-4">
+                <p class="mb-4">El mercado inmobiliario venezolano presenta una alta concentración geográfica, con Caracas absorbiendo el <strong>46% de la actividad económica nacional</strong>, seguida de Valencia y Maracaibo con un 10% cada una.</p>
+                <h4 class="font-semibold mb-3">Tabla 1: Precios y Oportunidades por Zona Clave (2025)</h4>
+                <table class="w-full mt-4">
+                    <thead class="bg-[#f9fafb]"><tr><th class="p-3 border border-[#e5e7eb] font-semibold">Zona</th><th class="p-3 border border-[#e5e7eb] font-semibold">Tipo de Propiedad</th><th class="p-3 border border-[#e5e7eb] font-semibold">Precio Promedio</th><th class="p-3 border border-[#e5e7eb] font-semibold">Potencial Inversión</th></tr></thead>
+                    <tbody>
+                        <tr><td class="p-3 border border-[#e5e7eb]">Caracas</td><td class="p-3 border border-[#e5e7eb]">Residencial (Chacao, El Hatillo)</td><td class="p-3 border border-[#e5e7eb]">$30.000 - $50.000</td><td class="p-3 border border-[#e5e7eb]">Alta demanda en zonas seguras</td></tr>
+                        <tr><td class="p-3 border border-[#e5e7eb]">Margarita</td><td class="p-3 border border-[#e5e7eb]">Vivienda turística</td><td class="p-3 border border-[#e5e7eb]">$25.000 - $40.000</td><td class="p-3 border border-[#e5e7eb]">Alquiler temporal a nómadas</td></tr>
+                        <tr><td class="p-3 border border-[#e5e7eb]">San Cristóbal</td><td class="p-3 border border-[#e5e7eb]">Comercial/residencial</td><td class="p-3 border border-[#e5e7eb]">$20.000 - $35.000</td><td class="p-3 border border-[#e5e7eb]">Crecimiento fronterizo</td></tr>
+                    </tbody>
+                </table>
+                <div class="mt-4"><h4 class="font-semibold mb-2">Inversión Extranjera y Reconversión de Espacios</h4><p>Se observa un creciente interés de inversionistas extranjeros en propiedades a precios atractivos. Simultáneamente, existe una tendencia hacia la reconversión de espacios comerciales e industriales para uso residencial o mixto, aprovechando oportunidades de revalorización.</p></div>
             </div>
-
-            <div class="p-8 mb-4 rounded-lg bg-white">
-                <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CÁLCULO DEL VALOR DE LA CONSTRUCCIÓN</h2>
-                <div class="mb-6">
-                    <p>Para la valoración de la construcción se ha utilizado el método de Ross-Heidecke, que considera el estado de conservación del inmueble calculando la depreciación más acorde a la realidad.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Parámetros de construcción</h3>
-                        <table class="min-w-full bg-white">
-                            <tbody>
-                                <tr><td class="py-2 px-4 border">Área de Construcción</td><td class="py-2 px-4 border text-center">300,82 m²</td></tr>
-                                <tr><td class="py-2 px-4 border">VR (Valor m² de Construcción)</td><td class="py-2 px-4 border text-center">70.086,00 Bs.</td></tr>
-                                <tr><td class="py-2 px-4 border">e (Estado)</td><td class="py-2 px-4 border text-center">3,50</td></tr>
-                                <tr><td class="py-2 px-4 border">C (Coeficiente)</td><td class="py-2 px-4 border text-center">32,20%</td></tr>
-                                <tr><td class="py-2 px-4 border">Ee (Edad Efectiva)</td><td class="py-2 px-4 border text-center">66 años</td></tr>
-                                <tr><td class="py-2 px-4 border">Vu (Vida útil)</td><td class="py-2 px-4 border text-center">80 años</td></tr>
-                                <tr><td class="py-2 px-4 border">Vr (Valor de Reposición)</td><td class="py-2 px-4 border text-center">10%</td></tr>
-                            </tbody>
-                        </table>
-                        <div class="bg-[#f8f9fa] border border-[#dee2e6] rounded-md p-3 my-4 border-l-4 border-[#6c757d]">
-                            <div class="flex items-start gap-2.5">
-                                <div class="text-[#6c757d] text-[1.1rem] mt-0.5 shrink-0"><i class="fas fa-info-circle"></i></div>
-                                <div class="text-[0.875rem] leading-[1.4] text-[#495057]">
-                                    <strong class="text-[#343a40]">VR:</strong> Guías de PROMERCA (antes CINPRONET), acorde a la tipología del Inmueble en Estudio. <strong>10.- UNIFAMILIAR CONSTRUCCION TRADICIONAL, REPORTE Julio 2019.</strong> Adaptada y Actualizada al 16/07/2025
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Resultados del Ross-Heidecke</h3>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                            <p class="mb-2"><strong>VR - a = Valor de Reposición Depreciado:</strong> 17.579,94 Bs.</p>
-                            <p class="mb-2"><strong>VRt = Valor Estimado de la Construcción:</strong> 5.288.397,12 Bs.</p>
-                            <p class="mb-2"><strong>VALOR ACTUAL (CASA):</strong> 5.288.397,12 Bs.</p>
-                            <p class="mb-2"><strong>VALOR ACTUAL REDONDEADO (CASA):</strong> 5.288.400,00 Bs.</p>
-                            <p class="mb-4"><strong>VALOR ACTUAL EN USD:</strong> 45.273,52 $ <span class="text-sm">(1 USD = 116,81 Bs.)</span></p>
-                            <p class="text-sm">Según tasa de cambio de referencia (Bs./$ 116,81), tomada de la Página del Banco Central de Venezuela, con fecha valor, Miércoles 16 de Julio del año 2025</p>
-                        </div>
-                        <div class="bg-gray-100 p-4 rounded-lg">
-                            <h4 class="font-semibold mb-2">Clasificación del estado</h4>
-                            <p>La construcción se encuentra en estado <strong>3,50</strong>: Mantenimiento Deficiente.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-8">
-                    <h3 class="text-xl font-semibold mb-4">Tabla de depreciación por estado</h3>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="py-2 px-4 border">ESTADO</th>
-                                    <th class="py-2 px-4 border">CONDICIÓN FÍSICA</th>
-                                    <th class="py-2 px-4 border">CLASIFICACIÓN NORMAL</th>
-                                    <th class="py-2 px-4 border">COEFICIENTE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="py-2 px-4 border text-center">1</td><td class="py-2 px-4 border">NUEVO: No ha sufrido ni necesita reparaciones</td><td class="py-2 px-4 border text-center">Óptimo: O</td><td class="py-2 px-4 border text-center">0</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">1.5</td><td class="py-2 px-4 border">Excelente mantenimiento, casa recién construida</td><td class="py-2 px-4 border text-center">Muy bueno: MB</td><td class="py-2 px-4 border text-center">0.032</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">2</td><td class="py-2 px-4 border">REGULAR: Requiere o ha recibido reparaciones sin importancia</td><td class="py-2 px-4 border text-center">Bueno: B</td><td class="py-2 px-4 border text-center">2.52</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">2.5</td><td class="py-2 px-4 border">Mantenimiento no muy bueno</td><td class="py-2 px-4 border text-center">Intermedio: I</td><td class="py-2 px-4 border text-center">8.09</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">3</td><td class="py-2 px-4 border">Requiere reparaciones simples</td><td class="py-2 px-4 border text-center">Regular: R</td><td class="py-2 px-4 border text-center">18.10</td></tr>
-                                <tr class="bg-[#fef3c7] font-bold border-2 border-[#f59e0b]"><td class="py-2 px-4 border text-center">3.5</td><td class="py-2 px-4 border">Mantenimiento deficiente</td><td class="py-2 px-4 border text-center">Deficiente: D</td><td class="py-2 px-4 border text-center">32.20</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">4</td><td class="py-2 px-4 border">Requiere reparaciones importantes</td><td class="py-2 px-4 border text-center">Malo: M</td><td class="py-2 px-4 border text-center">52.60</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">5</td><td class="py-2 px-4 border">Requiere muchas reparaciones importantes</td><td class="py-2 px-4 border text-center">Muy Malo: MM</td><td class="py-2 px-4 border text-center">72.20</td></tr>
-                                <tr><td class="py-2 px-4 border text-center">-</td><td class="py-2 px-4 border">Sin valor= Valor de Demolición</td><td class="py-2 px-4 border text-center">Demolición: DM</td><td class="py-2 px-4 border text-center">100</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="mb-8 h-[200px] md:h-[300px] flex justify-center">
-                    <canvas id="constructionDepreciationChart" class="max-w-full max-h-[250px]"></canvas>
-                </div>
+          </div>
+          
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#faf5ff] border-[#8b5cf6]">
+            <h3 class="text-xl font-semibold mb-4 flex items-center text-purple-600"><i class="fas fa-balance-scale mr-2"></i> 5. Incertidumbre Política</h3>
+            <div class="mb-4">
+                <p>Las elecciones legislativas proyectadas para diciembre de 2025 y las sanciones internacionales continuas generan incertidumbre que podría alterar significativamente los flujos de inversión. La revocación de la Licencia Nº 44 por parte de Estados Unidos ha incrementado las expectativas de volatilidad en el sector.</p>
+                <p class="mt-3">Esta incertidumbre política afecta tanto las decisiones de inversión a largo plazo como la confianza de los compradores locais e internacionais, creando un ambiente de cautela que se refleja en la velocidad de las transacciones y en las estrategias de precio.</p>
             </div>
+          </div>
 
-            <div class="p-8 mb-4 rounded-lg bg-white">
-                <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">VALOR TOTAL DEL INMUEBLE</h2>
-                <div class="flex flex-col md:flex-row gap-4 mb-4">
-                    <div class="flex-1 mb-4">
-                        <h3 class="text-lg font-semibold mb-3">Resumen de valoración</h3>
-                        <table class="min-w-full bg-white text-[0.85rem]">
-                            <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="py-2 px-3 border text-sm">COMPONENTE</th>
-                                    <th class="py-2 px-3 border text-sm">VALOR EN Bs.</th>
-                                    <th class="py-2 px-3 border text-sm">VALOR EN USD</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-3 border">Terreno</td>
-                                    <td class="py-2 px-3 border text-center">7.215.730,00 Bs.</td>
-                                    <td class="py-2 px-3 border text-center">61.773,22 $</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-3 border">Construcción</td>
-                                    <td class="py-2 px-3 border text-center">5.288.400,00 Bs.</td>
-                                    <td class="py-2 px-3 border text-center">45.273,52 $</td>
-                                </tr>
-                                <tr class="bg-blue-100 font-bold">
-                                    <td class="py-2 px-3 border">VALOR TOTAL</td>
-                                    <td class="py-2 px-3 border text-center">12.504.130,00 Bs.</td>
-                                    <td class="py-2 px-3 border text-center">107.046,74 $</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="flex-1 flex justify-center items-center h-[250px] mt-2">
-                        <canvas id="propertyValueDistributionChart" class="max-w-[300px] max-h-[250px]"></canvas>
-                    </div>
-                </div>
-                <div class="bg-blue-50 p-4 rounded-lg mb-8">
-                    <h3 class="text-xl font-semibold mb-4">Valor técnico del inmueble</h3>
-                    <p class="text-2xl font-bold text-center mb-2">107.046,74 USD</p>
-                    <p class="text-center text-sm">CIENTO SIETE MIL CUARENTA Y SEIS DÓLARES AMERICANOS CON 74/100 CTVS.</p>
-                    <p class="text-center text-sm mt-2">Según tasa de cambio de referencia (116,81 Bs./$) del Banco Central de Venezuela, con fecha valor, Miércoles 16 de Julio del año 2.025</p>
-                </div>
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#f0fdf4] border-[#22c55e]">
+            <h3 class="text-xl font-semibold mb-4 flex items-center text-green-600"><i class="fas fa-crystal-ball mr-2"></i> 6. Perspectivas 2025-2026</h3>
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">Crecimiento Moderado</h4>
+                <p class="mb-3">Se proyecta un crecimiento del PIB del <strong>3% para 2025</strong> según el OVF, con expectativas de que el gasto público incremente hacia las elecciones legislativas. El IIES/UCAB es más optimista con una proyección del <strong>5%</strong>, aunque las perspectivas de sostenibilidad a largo plazo siguen siendo débles.</p>
+                <h4 class="font-semibold mb-2">Expansión de Alquileres</h4>
+                <p class="mb-3">Se anticipa una reforma a la Ley de Arrendamientos que podría impulsar el mercado de alquiler como opción viable para miles de venezolanos, especialmente jóvenes que buscan formar familias. Esta reforma representaría una oportunidad significativa para el sector.</p>
+                <h4 class="font-semibold mb-2">Tecnificación del Sector</h4>
+                <p>El sector inmobiliario está experimentando una gradual digitalización y profesionalización, con mayor uso de plataformas digitales, marketing especializado y servicios más sofisticados para atender nichos específicos del mercado.</p>
             </div>
+          </div>
 
-            <div class="p-8 mb-4 rounded-lg bg-white">
-                <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">ANÁLISIS DE MERCADO INMOBILIARIO EN VENEZUELA (JULIO 2025)</h2>
-                
-                <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef7e0] border-[#f59e0b]">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center text-yellow-600"><i class="fas fa-chart-line mr-2"></i> 1. Contexto Macroeconómico y Poder Adquisitivo</h3>
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2">Contracción Económica Persistente</h4>
-                        <p class="mb-3">Según el Instituto de Investigaciones Económicas y Sociales de la UCAB (IIES/UCAB), al cierre de 2024, la economía venezolana representaba solo el <strong>37,6% de su tamaño hace diez años</strong>. El PIB per cápita se ha reducido en un <strong>67%</strong>, evidenciando una contracción estructural profunda que afecta directamente la capacidad de compra de bienes inmuebles.</p>
-                        <h4 class="font-semibold mb-2">Baja Capacidad de Compra</h4>
-                        <p class="mb-3">El Observatorio Venezolano de Finanzas (OVF) reporta que la remuneración promedio mensual del sector privado en Caracas alcanzó los <strong>250 dólares</strong> a finales del primer trimestre de 2025. La distribución salarial muestra:</p>
-                        <ul class="list-disc pl-6 mb-3"><li>Puestos gerenciales: 500 dólares</li><li>Profesionales: 350 dólares</li><li>Obreros: 220 dólares</li></ul>
-                        <p class="mb-3">Sin embargo, la canasta básica familiar se ubicó en <strong>600 dólares</strong> en marzo de 2025, equivalente a 170 salarios mínimos, haciendo inalcanzable la adquisición de viviendas con costos promedio entre 25.000 y 35.000 dólares.</p>
-                        <h4 class="font-semibold mb-2">Desigualdad Marcada</h4>
-                        <p>La Encuesta Nacional de Condiciones de Vida (ENCOVI) 2024 revela una desigualdad extrema: la diferencia entre el grupo más pobre y el más rico es de <strong>70 veces</strong> (8,5 dólares vs. 600 dólares). El 40% de los hogares com mayores ingresos se concentra en Caracas, que solo alberga el 16% de la población nacional.</p>
-                    </div>
-                </div>
+          <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-lightbulb mr-2 text-blue-600"></i>Conclusiones del Análisis de Mercado</h3>
+              <p class="mb-4">El mercado inmobiliario venezolano opera en modo <strong>"supervivencia adaptativa"</strong> con las siguientes características:</p>
+              <ul class="list-disc pl-6 mb-4">
+                  <li><strong>Alta concentración geográfica:</strong> 46% de actividad en Caracas</li>
+                  <li><strong>Dolarización espontánea:</strong> Transacciones mayoritariamente en USD</li>
+                  <li><strong>Oportunidades en nichos turísticos:</strong> Crecimiento en alquiler temporal</li>
+                  <li><strong>Segmentación extrema:</strong> Mercado dual por niveles de ingreso</li>
+              </ul>
+              <h4 class="font-semibold mb-2">La recuperación sostenida dependerá de:</h4>
+              <ul class="list-disc pl-6 mb-4">
+                  <li>Reformas legales que flexibilicen alquileres e inversión extranjera</li>
+                  <li>Estabilidad macroeconómica que recupere poder adquisitivo</li>
+                  <li>Diversificación regional para reducir asimetrías</li>
+                  <li>Desarrollo de sistemas de financiamiento hipotecario</li>
+              </ul>
+          </div>
 
-                <div class="p-8 mb-4 rounded-lg bg-white">
-                    <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CONCLUSIONES Y RECOMENDACIONES</h2>
-                    
-                    <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#eff6ff] border-[#3b82f6]">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-calculator mr-2 text-blue-600"></i>Análisis Técnico del Inmueble</h3>
-                        <p class="mb-4">El análisis técnico realizado siguiendo metodologías reconocidas internacionalmente arroja los siguientes resultados:</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                            <div class="bg-white p-4 rounded-lg border"><h4 class="font-semibold text-blue-600 mb-2">Valor del Terreno</h4><p class="text-2xl font-bold">$61.773,22</p><p class="text-sm text-gray-600">1.344,00 m² de superficie</p></div>
-                            <div class="bg-white p-4 rounded-lg border"><h4 class="font-semibold text-blue-600 mb-2">Valor de Construcción</h4><p class="text-2xl font-bold">$45.273,52</p><p class="text-sm text-gray-600">300,82 m² construidos</p></div>
-                            <div class="bg-white p-4 rounded-lg border border-blue-400"><h4 class="font-semibold text-blue-600 mb-2">Valor Técnico Total</h4><p class="text-2xl font-bold">$107.046,74</p><p class="text-sm text-gray-600">Valor avalúo técnico</p></div>
-                        </div>
-                        <p>Los coeficientes estadísticos obtenidos (Correlación 0,97, Concentración 0,93, Pearson 0,97) validan la robustez técnica de la valoración, proporcionando máxima confiabilidad matemática al resultado.</p>
-                    </div>
+          <div class="bg-[#f8fafc] p-4 rounded-md mt-8">
+              <h4 class="font-semibold mb-3">Referencias Bibliográficas</h4>
+              <ol class="list-decimal pl-6">
+                  <li class="mb-2">RIV (2025). Análisis del Mercado Inmobiliario Venezolano en 2025: Desafíos y Oportunidades. Consultado el 6 de junio de 2025 en <a href="https://riv.com.ve/blog/analisis-del-mercado-inmobiliario-venezolano-en-2025-desafios-y-oportunidades/24010?page=1" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline">RIV.com.ve</a></li>
+                  <li class="mb-2">Velutini, K. (2025). Sector inmobiliario venezolano mantiene estabilidad y muestra signos de recuperación. Finanzas Digital. Consultado el 6 de junio de 2025 en <a href="https://finanzasdigital.com/mercado-inmobiliario-venezuela-crecimiento/" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline">FinanzasDigital.com</a></li>
+                  <li class="mb-2">SAGA International Realty (2025). ¿Cómo influye el tipo de cambio en el mercado inmobiliario venezolano?. Consultado el 6 de junio de 2025 en <a href="https://www.sagainternationalrealty.com/post/tipo-cambio-mercado-inmobiliario-venezolano" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline">SagaInternationalRealty.com</a></li>
+                  <li class="mb-2">RIV El Hatillo (2025). Tendencias del Mercado Inmobiliario en Venezuela para 2025: Oportunidades y Desafíos en Caracas. Consultado el 6 de junio de 2025 en <a href="https://riv-elhatillo.com/tendencias-del-mercado-inmobiliario-en-venezuela-para-2025-oportunidades-y-desafios-en-caracas/" target="_blank" rel="noopener noreferrer" class="text-[#1e3c72] underline">RIV-ElHatillo.com</a></li>
+              </ol>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <!-- Conclusions and Recommendations -->
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <h2 class="text-[#1e3c72] border-b-2 border-[#1e3c72] pb-2 mb-6 text-2xl font-bold">CONCLUSIONES Y RECOMENDACIONES</h2>
+          
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#eff6ff] border-[#3b82f6]">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-calculator mr-2 text-blue-600"></i>Análisis Técnico del Inmueble</h3>
+              <p class="mb-4">El análisis técnico realizado siguiendo metodologías reconocidas internacionalmente arroja los siguientes resultados:</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div class="bg-white p-4 rounded-lg border"><h4 class="font-semibold text-blue-600 mb-2">Valor del Terreno</h4><p class="text-2xl font-bold">$61.773,22</p><p class="text-sm text-gray-600">1.344,00 m² de superficie</p></div>
+                  <div class="bg-white p-4 rounded-lg border"><h4 class="font-semibold text-blue-600 mb-2">Valor de Construcción</h4><p class="text-2xl font-bold">$45.273,52</p><p class="text-sm text-gray-600">300,82 m² construidos</p></div>
+                  <div class="bg-white p-4 rounded-lg border border-blue-400"><h4 class="font-semibold text-blue-600 mb-2">Valor Técnico Total</h4><p class="text-2xl font-bold">$107.046,74</p><p class="text-sm text-gray-600">Valor avalúo técnico</p></div>
+              </div>
+              <p>Los coeficientes estadísticos obtenidos (Correlación 0,97, Concentración 0,93, Pearson 0,97) validan la robustez técnica de la valoración, proporcionando máxima confiabilidad matemática al resultado.</p>
+          </div>
 
-                    <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef2f2] border-[#ef4444]">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-chart-line mr-2 text-red-600"></i>Realidad del Mercado Venezolano</h3>
-                        <p class="mb-4">El contexto macroeconómico venezolano presenta características que distorsionan significativamente la relación entre valor técnico y valor de mercado:</p>
-                        <ul class="list-disc pl-6 mb-4">
-                            <li><strong>Contracción económica del 62,4%</strong> en la última década</li>
-                            <li><strong>Salario promedio de $250</strong> vs. <strong>canasta básica de $600</strong></li>
-                            <li><strong>Ausencia total de crédito hipotecario</strong> funcional</li>
-                            <li><strong>Concentración del 46% de la actividad</strong> inmobiliaria en Caracas</li>
-                            <li><strong>Dolarización de facto</strong> que segmenta el mercado</li>
-                        </ul>
-                        <p>Esta realidad genera una brecha significativa entre el valor técnico calculado y las condiciones actuales de demanda efectiva en el mercado local.</p>
-                    </div>
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef2f2] border-[#ef4444]">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-chart-line mr-2 text-red-600"></i>Realidad del Mercado Venezolano</h3>
+              <p class="mb-4">El contexto macroeconómico venezolano presenta características que distorsionan significativamente la relación entre valor técnico y valor de mercado:</p>
+              <ul class="list-disc pl-6 mb-4">
+                  <li><strong>Contracción económica del 62,4%</strong> en la última década</li>
+                  <li><strong>Salario promedio de $250</strong> vs. <strong>canasta básica de $600</strong></li>
+                  <li><strong>Ausencia total de crédito hipotecario</strong> funcional</li>
+                  <li><strong>Concentración del 46% de la actividad</strong> inmobiliaria en Caracas</li>
+                  <li><strong>Dolarización de facto</strong> que segmenta el mercado</li>
+              </ul>
+              <p>Esta realidad genera una brecha significativa entre el valor técnico calculado y las condiciones actuales de demanda efectiva en el mercado local.</p>
+          </div>
 
-                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg mb-8">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-tag mr-2 text-green-600"></i>Precio de Promoción Recomendado</h3>
-                        <div class="flex flex-col md:flex-row items-center justify-between mb-4">
-                            <div class="mb-4 md:mb-0">
-                                <p class="text-4xl font-bold text-green-800">$100.000</p>
-                                <p class="text-lg font-semibold">TOTALMENTE NEGOCIABLES</p>
-                                <p class="text-base">CON FACILIDADES DE PAGO</p>
-                                <p class="text-sm mt-3 text-gray-700">Dado que los precios de las propiedades en Venezuela están en constante cambio debido a la inestabilidad económica, es importante considerar la posibilidad de ajustar el precio de promoción a medida que el mercado evoluciona.</p>
-                            </div>
-                            <div class="border-l-4 border-[#1e3c72] pl-4 p-4 rounded-lg bg-white border border-green-200">
-                                <p class="text-sm text-gray-600">Equivalente aproximado en Bs.</p>
-                                <p class="text-xl font-bold">11.681.000,00 Bs.</p>
-                                <p class="text-xs text-gray-500">Según tasa BCV (116,81 Bs./$)</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg border border-green-200">
-                            <h4 class="font-semibold mb-2 text-green-700">Justificación del Ajuste de Precio:</h4>
-                            <ul class="list-disc pl-6 text-sm">
-                                <li>Ajuste de aproximadamente el <strong>7%</strong> respecto al valor técnico para adaptarse a las condiciones actuales del mercado.</li>
-                                <li>Posicionamiento competitivo frente a inmuebles similares en el estado Bolívar</li>
-                                <li>Atractivo para el perfil de compradores identificado en el análisis</li>
-                                <li>Facilidades de pago para ampliar el universo de potenciales adquirentes</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-8">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-lightbulb mr-2 text-blue-600"></i>Estrategia de Comercialización Recomendada</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                                <i class="fas fa-handshake text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Facilidades de Pago Estructuradas</h4>
-                                <ul class="text-sm list-disc pl-4"><li>Inicial flexible desde el 40%</li><li>Financiamiento directo a 4-8 meses</li><li>Posibilidad de recibir Criptomonedas como USDT, para amplíar el espectro de posibles compradores a inversores internacionales que poseen criptoactivos y buscan diversificar sus portafolios en bienes raíces</li></ul>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                                <i class="fas fa-map-marked-alt text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Destacar Ventajas Estratégicas</h4>
-                                <ul class="text-sm list-disc pl-4"><li>Ubicación privilegiada En plena Av. 17 de Diciembre</li><li>Amplio terreno con potencial de desarrollo</li><li>Estructura existente aprovechable</li></ul>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                                <i class="fas fa-users text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Segmentación de Marketing</h4>
-                                <ul class="text-sm list-disc pl-4"><li>Dirigirse a hombres y mujeres entre 35 y 65 años, residentes de Ciudad Bolívar o zonas aledañas (como Puerto Ordaz), con empresas o carreras profesionales exitosas y estables en sectores como la minería, el comercio, la industria o la medicina.</li><li>Promoción en redes inmobiliarias especializadas</li></ul>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                                <i class="fas fa-calendar-alt text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Timing de Mercado</h4>
-                                <ul class="text-sm list-disc pl-4"><li>Aprovechar la estabilización del mercado</li><li>Capitalizar el flujo de clientes existente, insertando un nuevo polo de atracción en un ecosistema comercial ya consolidado y exitoso</li></ul>
-                            </div>
-                        </div>
-                    </div>
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#fef7e0] border-[#f59e0b]">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-exclamation-circle mr-2 text-yellow-600"></i>Los Terrenos como Activo Atípico</h3>
+              <p class="mb-4">En el contexto actual, los terrenos enfrentan cuatro factores principais que reducen su atractivo como inversión inmediata:</p>
+              <div class="space-y-3 mb-4">
+                  <div class="flex items-start mb-4 p-3 bg-[rgba(255,255,255,0.7)] rounded-md">
+                      <div class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-3 text-[0.875rem] bg-[#fef3c7] text-[#d97706]"><i class="fas fa-dollar-sign"></i></div>
+                      <div><h4 class="font-semibold mb-1">1. Alto Costo de Construcción</h4><p class="text-sm">Los compradores evalúan no solo el precio del terreno, sino también los gastos para acondicionarlo (nivelación, permisos, servicios) y construir, reduciendo el interés en proyectos a mediano plazo.</p></div>
+                  </div>
+                  <div class="flex items-start mb-4 p-3 bg-[rgba(255,255,255,0.7)] rounded-md">
+                      <div class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-3 text-[0.875rem] bg-[#fee2e2] text-[#dc2626]"><i class="fas fa-file-alt"></i></div>
+                      <div><h4 class="font-semibold mb-1">2. Trámites Burocráticos Complejos</h4><p class="text-sm">Los permisos son tediosos y retrasan proyectos. Obtener autorizaciones de zonificación, estudios ambientales o avales puede tomar meses, desincentivando compradores que buscan agilidad.</p></div>
+                  </div>
+                  <div class="flex items-start mb-4 p-3 bg-[rgba(255,255,255,0.7)] rounded-md">
+                      <div class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-3 text-[0.875rem] bg-[#fef3c7] text-[#d97706]"><i class="fas fa-home"></i></div>
+                      <div><h4 class="font-semibold mb-1">3. Bienhechurías: Factor Dual</h4><p class="text-sm"><span class="text-green-600 font-semibold">Positivo:</span> Si están bien conservadas, permiten adaptar y ahorrar hasta 50% en construcción. <span class="text-red-600 font-semibold">Negativo:</span> Si están deterioradas, requieren demolición (gastos adicionales de +$600), reduciendo el interés.</p></div>
+                  </div>
+                  <div class="flex items-start mb-4 p-3 bg-[rgba(255,255,255,0.7)] rounded-md">
+                      <div class="shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-3 text-[0.875rem] bg-[#fee2e2] text-[#dc2626]"><i class="fas fa-chart-line-down"></i></div>
+                      <div><h4 class="font-semibold mb-1">4. Depreciación por Economía Local</h4><p class="text-sm">Los valores se han ajustado a la baja, pero muchos propietarios ofertan con precios basados en expectativas anteriores, generando sobreoferta sin demanda real.</p></div>
+                  </div>
+              </div>
+          </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg border">
-                        <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-2 text-green-600"></i>Conclusión Final</h3>
-                        <p class="mb-4">El presente avalúo demuestra que, si bien el <strong>valor técnico del inmueble es de $107.046,74</strong>, las condiciones particulares del mercado inmobiliario venezolano, caracterizadas por la ausencia total de créditos hipotecarios, la necesidad de liquidez inmediata por parte de los vendedores y el perfil específico de los compradores actuales, entre otros, justifican un <strong>precio de promoción recomendado de $100.000</strong>.</p>
-                        <p class="mb-4">Esta recomendación considera tanto la solidez técnica del avalúo como la realidad comercial del mercado, proporcionando al propietario una estrategia viable para la comercialización exitosa del inmueble en el contexto económico actual de Venezuela.</p>
-                        <p class="text-sm text-gray-600">La flexibilidad en las condiciones de pago y la estrategia de marketing segmentada aumentarán significativamente las posibilidades de concretar la venta en un plazo razonable.</p>
-                    </div>
+          <div class="mb-8 p-6 rounded-lg border-l-4 bg-[#ecfdf5] border-[#10b981]">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-users mr-2 text-green-600"></i>Perfil del Comprador Actual</h3>
+              <p class="mb-4">El mercado actual está dominado por tres tipos específicos de compradores:</p>
+              <div class="space-y-4 mb-4">
+                  <div class="bg-[rgba(255,255,255,0.8)] p-4 rounded-md mb-4"><h4 class="font-semibold mb-2 flex items-center text-blue-500"><i class="fas fa-shield-alt mr-2"></i>Inversores Cautelosos</h4><p class="text-sm">Buscan terrenos con ubicación estratégica (cerca de calles o avenidas principales) y bajas barreras legales (permisos pre-aprobados o zonificación clara).</p></div>
+                  <div class="bg-[rgba(255,255,255,0.8)] p-4 rounded-md mb-4"><h4 class="font-semibold mb-2 flex items-center text-orange-500"><i class="fas fa-tools mr-2"></i>Inversores Prácticos</h4><p class="text-sm">Buscan terrenos sin bienhechurías (para evitar costos extras) o con estructuras útiles y funcionales (ej: galpón en buen estado para convertir en taller).</p></div>
+                  <div class="bg-[rgba(255,255,255,0.8)] p-4 rounded-md mb-4"><h4 class="font-semibold mb-2 flex items-center text-green-500"><i class="fas fa-hard-hat mr-2"></i>Constructores Especializados</h4><p class="text-sm">Priorizan lotes con servicios básicos instalados (agua, luz) y suelos estables. Prefieren lotes libres o con bienhechurías integrables a sus diseños (ej: casa antigua con potencial para renovación boutique).</p></div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-container">
+        <div class="p-8 mb-4 rounded-lg bg-white">
+          <!-- Recommended Promotion Price -->
+          <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-tag mr-2 text-green-600"></i>Precio de Promoción Recomendado</h3>
+              <div class="flex flex-col md:flex-row items-center justify-between mb-4">
+                  <div class="mb-4 md:mb-0">
+                      <p class="text-4xl font-bold text-green-800">$100.000</p>
+                      <p class="text-lg font-semibold">TOTALMENTE NEGOCIABLES</p>
+                      <p class="text-base">CON FACILIDADES DE PAGO</p>
+                      <p class="text-sm mt-3 text-gray-700">Dado que los precios de las propiedades en Venezuela están en constante cambio debido a la inestabilidad económica, es importante considerar la posibilidad de ajustar el precio de promoción a medida que el mercado evoluciona.</p>
+                  </div>
+                  <div class="border-l-4 border-[#1e3c72] pl-4 p-4 rounded-lg bg-white border border-green-200">
+                      <p class="text-sm text-gray-600">Equivalente aproximado en Bs.</p>
+                      <p class="text-xl font-bold">11.681.000,00 Bs.</p>
+                      <p class="text-xs text-gray-500">Según tasa BCV (116,81 Bs./$)</p>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-green-200">
+                  <h4 class="font-semibold mb-2 text-green-700">Justificación del Ajuste de Precio:</h4>
+                  <ul class="list-disc pl-6 text-sm">
+                      <li>Ajuste de aproximadamente el <strong>7%</strong> respecto al valor técnico para adaptarse a las condiciones actuales del mercado.</li>
+                      <li>Posicionamiento competitivo frente a inmuebles similares en el estado Bolívar</li>
+                      <li>Atractivo para el perfil de compradores identificado en el análisis</li>
+                      <li>Facilidades de pago para ampliar el universo de potenciales adquirentes</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <!-- Recommended Marketing Strategy -->
+          <div class="mb-8">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-lightbulb mr-2 text-blue-600"></i>Estrategia de Comercialización Recomendada</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                      <i class="fas fa-handshake text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Facilidades de Pago Estructuradas</h4>
+                      <ul class="text-sm list-disc pl-4"><li>Inicial flexible desde el 40%</li><li>Financiamiento directo a 4-8 meses</li><li>Posibilidad de recibir Criptomonedas como USDT, para amplíar el espectro de posibles compradores a inversores internacionales que poseen criptoactivos y buscan diversificar sus portafolios en bienes raíces</li></ul>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                      <i class="fas fa-map-marked-alt text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Destacar Ventajas Estratégicas</h4>
+                      <ul class="text-sm list-disc pl-4"><li>Ubicación privilegiada En plena Av. 17 de Diciembre</li><li>Amplio terreno con potencial de desarrollo</li><li>Estructura existente aprovechable</li></ul>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                      <i class="fas fa-users text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Segmentación de Marketing</h4>
+                      <ul class="text-sm list-disc pl-4"><li>Dirigirse a hombres y mujeres entre 35 y 65 años, residentes de Ciudad Bolívar o zonas aledañas (como Puerto Ordaz), con empresas o carreras profesionales exitosas y estables en sectores como la minería, el comercio, la industria o la medicina.</li><li>Promoción en redes inmobiliarias especializadas</li></ul>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                      <i class="fas fa-calendar-alt text-blue-500 text-2xl mb-2"></i><h4 class="font-semibold mb-2">Timing de Mercado</h4>
+                      <ul class="text-sm list-disc pl-4"><li>Aprovechar la estabilización del mercado</li><li>Capitalizar el flujo de clientes existente, insertando un nuevo polo de atracción en un ecosistema comercial ya consolidado y exitoso</li></ul>
+                  </div>
+              </div>
+          </div>
 
-                    <div class="mb-8 h-[250px] md:h-[350px] flex justify-center">
-                         <canvas id="marketValueComparisonChart" class="max-w-full"></canvas>
-                    </div>
-                </div>
+          <!-- Final Conclusion -->
+          <div class="bg-gray-50 p-6 rounded-lg border">
+              <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fas fa-check-circle mr-2 text-green-600"></i>Conclusión Final</h3>
+              <p class="mb-4">El presente avalúo demuestra que, si bien el <strong>valor técnico del inmueble es de $107.046,74</strong>, las condiciones particulares del mercado inmobiliario venezolano, caracterizadas por la ausencia total de créditos hipotecarios, la necesidad de liquidez inmediata por parte de los vendedores y el perfil específico de los compradores actuales, entre otros, justifican un <strong>precio de promoción recomendado de $100.000</strong>.</p>
+              <p class="mb-4">Esta recomendación considera tanto la solidez técnica del avalúo como la realidad comercial del mercado, proporcionando al propietario una estrategia viable para la comercialización exitosa del inmueble en el contexto económico actual de Venezuela.</p>
+              <p class="text-sm text-gray-600">La flexibilidad en las condiciones de pago y la estrategia de marketing segmentada aumentarán significativamente las posibilidades de concretar la venta en un plazo razonable.</p>
+          </div>
+
+          <div class="mb-8 h-[250px] md:h-[350px] flex justify-center">
+               <canvas id="marketValueComparisonChart" class="max-w-full"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <div class="page-container p-8 mb-4 rounded-lg bg-gray-100">
+        <div class="bg-[#f8f9fa] p-4 mb-6 rounded-md border-l-4 border-[#3498db]">
+            <h3 class="text-xl font-semibold mb-4">Elaborado por:</h3>
+            <div class="ml-2">
+                <p class="font-medium text-lg text-blue-800">Steven Gómez</p>
+                <p class="text-gray-700 mb-1">V-18.666.207</p>
+                <p class="text-gray-700 mb-4">Gerente de Oficina</p>
+                <p class="font-semibold text-gray-800">LEDEZMA ASESORES INMOBILIARIOS & FINANCIEROS C.A.</p>
             </div>
-            
-            <div class="p-8 mb-4 rounded-lg bg-gray-100">
-                <div class="bg-[#f8f9fa] p-4 mb-6 rounded-md border-l-4 border-[#3498db]">
-                    <h3 class="text-xl font-semibold mb-4">Elaborado por:</h3>
-                    <div class="ml-2">
-                        <p class="font-medium text-lg text-blue-800">Steven Gómez</p>
-                        <p class="text-gray-700 mb-1">V-18.666.207</p>
-                        <p class="text-gray-700 mb-4">Gerente de Oficina</p>
-                        <p class="font-semibold text-gray-800">LEDEZMA ASESORES INMOBILIARIOS & FINANCIEROS C.A.</p>
-                    </div>
-                    <div class="mt-6">
-                        <h4 class="font-semibold mb-3 text-blue-800">Certificaciones:</h4>
-                        <div class="flex flex-wrap">
-                            <div class="inline-flex items-center bg-[#e6f3ff] rounded px-2 py-1 mr-1.5 mb-1.5 text-[0.85rem]"><i class="fas fa-certificate text-[#3498db] mr-1.5"></i><span>Sociedad Venezolana de Economistas Tasadores N° 2404</span></div>
-                        </div>
-                        <div class="flex flex-wrap mt-2">
-                             <div class="inline-flex items-center bg-[#e6f3ff] rounded px-2 py-1 mr-1.5 mb-1.5 text-[0.85rem]"><i class="fas fa-certificate text-[#3498db] mr-1.5"></i><span>SUDEBAN N° P-5.854</span></div>
-                        </div>
-                    </div>
+            <div class="mt-6">
+                <h4 class="font-semibold mb-3 text-blue-800">Certificaciones:</h4>
+                <div class="flex flex-wrap">
+                    <div class="inline-flex items-center bg-[#e6f3ff] rounded px-2 py-1 mr-1.5 mb-1.5 text-[0.85rem]"><i class="fas fa-certificate text-[#3498db] mr-1.5"></i><span>Sociedad Venezolana de Economistas Tasadores N° 2404</span></div>
                 </div>
-                <div class="mt-8 pt-8 border-t border-gray-300 text-center text-gray-600">
-                    <p>Este informe ha sido elaborado siguiendo las normativas y metodologías reconocidas en valoración inmobiliaria.</p>
-                    <p class="mt-2">© 2025 LEDEZMA ASESORES INMOBILIARIOS & FINANCIEROS C.A. Todos los derechos reservados.</p>
+                <div class="flex flex-wrap mt-2">
+                     <div class="inline-flex items-center bg-[#e6f3ff] rounded px-2 py-1 mr-1.5 mb-1.5 text-[0.85rem]"><i class="fas fa-certificate text-[#3498db] mr-1.5"></i><span>SUDEBAN N° P-5.854</span></div>
                 </div>
             </div>
         </div>
+        <div class="mt-8 pt-8 border-t border-gray-300 text-center text-gray-600">
+            <p>Este informe ha sido elaborado siguiendo las normativas y metodologías reconocidas en valoración inmobiliaria.</p>
+            <p class="mt-2">© 2025 LEDEZMA ASESORES INMOBILIARIOS & FINANCIEROS C.A. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const setupChart = (canvasId, config) => {
-                const canvas = document.getElementById(canvasId);
-                if (canvas) {
-                    const ctx = canvas.getContext('2d');
-                    if (ctx) {
-                        new Chart(ctx, config);
-                    }
-                }
-            };
+    <script type="module">
+        import { Chart, registerables } from 'chart.js';
+        Chart.register(...registerables);
 
-            const coefficientsChartConfig = {
-                type: 'bar',
-                data: {
-                    labels: ['Correlación', 'Concentración', 'Pearson'],
-                    datasets: [{
-                        label: 'Coeficientes Estadísticos',
-                        data: [0.97, 0.93, 0.97],
-                        backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)'],
-                        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: { y: { beginAtZero: true, min: 0, max: 1.1, title: { display: true, text: 'Valor del Coeficiente' } } },
-                    plugins: {
-                        legend: { display: false },
-                        title: { display: true, text: 'Análisis de Coeficientes Estadísticos' },
-                        tooltip: { callbacks: { afterLabel: (context) => {
-                            const label = context.label;
-                            if (label === 'Correlación') return 'Indica relación casi perfecta entre variables';
-                            if (label === 'Concentración') return 'Excelente concentración de datos';
-                            if (label === 'Pearson') return 'Correlación lineal casi perfecta';
-                            return '';
-                        }}}
-                    }
+        // Chart setup function
+        const setupChart = (canvasId, config) => {
+            const canvas = document.getElementById(canvasId);
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                if (ctx) {
+                    new Chart(ctx, config);
                 }
-            };
-            setupChart('coefficientsChart', coefficientsChartConfig);
+            }
+        };
 
-            const landValueChartConfig = {
-                type: 'bar',
-                data: {
-                    labels: ['Comparable 1', 'Comparable 2', 'Comparable 3', 'Comparable 4', 'Promedio'],
-                    datasets: [{
-                        label: 'Valor del terreno (Bs./m²)',
-                        data: [1623.50, 7218.47, 7114.55, 4261.69, 5368.85],
-                        backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(255, 159, 64, 0.8)'],
-                        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { title: { display: true, text: 'Comparación de valores del terreno por m²' }, legend: { display: false } },
-                    scales: { y: { beginAtZero: true } }
-                }
-            };
-            setupChart('landValueChart', landValueChartConfig);
-            
-            const constructionDepreciationChartConfig = {
-                type: 'pie',
-                data: {
-                    labels: ['Depreciación', 'Valor actual'],
-                    datasets: [{
-                        data: [32.2, 67.8],
-                        backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
-                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: { title: { display: true, text: 'Porcentaje de depreciación de la construcción' } }
-                }
-            };
-            setupChart('constructionDepreciationChart', constructionDepreciationChartConfig);
-
-            const propertyValueDistributionChartConfig = {
-                type: 'doughnut',
-                data: {
-                    labels: ['Valor del terreno', 'Valor de la construcción'],
-                    datasets: [{
-                        data: [61773.22, 45273.52],
-                        backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 205, 86, 0.5)'],
-                        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 205, 86, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { title: { display: true, text: 'Distribución del valor total del inmueble' } }
-                }
-            };
-            setupChart('propertyValueDistributionChart', propertyValueDistributionChartConfig);
-
-            const marketValueComparisonChartConfig = {
-                type: 'bar',
-                data: {
-                    labels: ['Valor técnico calculado', 'Precio de promoción recomendado'],
-                    datasets: [{
-                        label: 'Precio en USD',
-                        data: [107046.74, 100000],
-                        backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(75, 192, 192, 0.5)'],
-                        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: { display: true, text: 'Comparación de valores del inmueble' },
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: (context) => context.raw.toLocaleString('es-VE', { style: 'currency', currency: 'USD' }) } }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: { callback: (value) => '$' + parseFloat(value).toLocaleString('es-VE') }
+        // Chart Configurations
+        const coefficientsChartConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Correlación', 'Concentración', 'Pearson'],
+                datasets: [{
+                    label: 'Coeficientes Estadísticos',
+                    data: [0.97, 0.93, 0.97],
+                    backgroundColor: ['rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)'],
+                    borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: { y: { beginAtZero: true, min: 0, max: 1.1, title: { display: true, text: 'Valor del Coeficiente' } } },
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Análisis de Coeficientes Estadísticos' },
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                const label = context.label;
+                                if (label === 'Correlación') return 'Indica relación casi perfecta entre variables';
+                                if (label === 'Concentración') return 'Excelente concentración de datos';
+                                if (label === 'Pearson') return 'Correlación lineal casi perfecta';
+                                return '';
+                            }
                         }
                     }
                 }
-            };
+            }
+        };
+
+        const landValueChartConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Comparable 1', 'Comparable 2', 'Comparable 3', 'Comparable 4', 'Promedio'],
+                datasets: [{
+                    label: 'Valor del terreno (Bs./m²)',
+                    data: [1623.50, 7218.47, 7114.55, 4261.69, 5368.85],
+                    backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(255, 159, 64, 0.8)'],
+                    borderColor: ['rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { title: { display: true, text: 'Comparación de valores del terreno por m²' }, legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        };
+
+        const constructionDepreciationChartConfig = {
+            type: 'pie',
+            data: {
+                labels: ['Depreciación', 'Valor actual'],
+                datasets: [{
+                    data: [32.2, 67.8],
+                    backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, plugins: { title: { display: true, text: 'Porcentaje de depreciación de la construcción' } } }
+        };
+
+        const propertyValueDistributionChartConfig = {
+            type: 'doughnut',
+            data: {
+                labels: ['Valor del terreno', 'Valor de la construcción'],
+                datasets: [{
+                    data: [61773.22, 45273.52],
+                    backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 205, 86, 0.5)'],
+                    borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 205, 86, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: 'Distribución del valor total del inmueble' } } }
+        };
+
+        const marketValueComparisonChartConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Valor técnico calculado', 'Precio de promoción recomendado'],
+                datasets: [{
+                    label: 'Precio en USD',
+                    data: [107046.74, 100000],
+                    backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(75, 192, 192, 0.5)'],
+                    borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: { display: true, text: 'Comparación de valores del inmueble' },
+                    legend: { display: false },
+                    tooltip: { callbacks: { label: (context) => context.raw.toLocaleString('es-VE', { style: 'currency', currency: 'USD' }) } }
+                },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => '$' + parseFloat(value).toLocaleString('es-VE') } } }
+            }
+        };
+
+        // Initialize all charts on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setupChart('coefficientsChart', coefficientsChartConfig);
+            setupChart('landValueChart', landValueChartConfig);
+            setupChart('constructionDepreciationChart', constructionDepreciationChartConfig);
+            setupChart('propertyValueDistributionChart', propertyValueDistributionChartConfig);
             setupChart('marketValueComparisonChart', marketValueComparisonChartConfig);
         });
     </script>
